@@ -1,0 +1,99 @@
+.banner {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
+    height: 350px;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 76%;
+        height: auto;
+    }
+
+    &-small {
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 38%;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        background-color: #fff;
+        transition: .3s ease-in-out;
+
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            padding: 3rem;
+        }
+    }
+
+    &-title {
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1.4rem;
+        }
+        
+        @include media-breakpoint-up(xxl) {
+            font-size: 3.3rem;
+        }
+    }
+
+    &-text {
+        margin: 2rem 0;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1rem;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            font-size: 1.8rem;
+        }
+    }
+
+    .btn {
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1rem;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &-hover {
+        .banner {
+            &-content {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &:hover {
+            .banner {
+                &-content {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    
+    &-desc {
+        @include media-breakpoint-down(lg) {
+            height: auto;
+        }
+    }
+}
